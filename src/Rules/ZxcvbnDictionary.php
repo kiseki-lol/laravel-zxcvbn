@@ -16,7 +16,7 @@ class ZxcvbnDictionary implements Rule
      */
     public function __construct($input1 = null, $input2 = null)
     {
-        $this->input = array_filter([$input1, $input2]);
+        $this->input = array_filter([base64_decode($input1), base64_decode($input2)]);
     }
 
     public static function handle(): string
